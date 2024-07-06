@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+bool prime(int num)
+{
+	if(num<=1)
+	{
+		return false;
+	}
+	for (int i=2;i<=num/2;i++) {
+        if (num%i==0) {
+            return false;
+        }
+    }
+    return true;
+}
+int main()
+{
+	int n;
+	cout<<"enter the value:";
+	cin>>n;
+	if(prime(n))
+	{
+		cout<<"prime number";
+	}
+	else
+	{
+		cout<<"not prime number";
+	}
+	return 0;
+}
