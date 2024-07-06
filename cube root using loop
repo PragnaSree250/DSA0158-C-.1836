@@ -1,0 +1,31 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+    double n;
+    cout << "Enter the number: ";
+    cin >>n;
+
+    if (n == 0) {
+        cout << "The cube root of 0 is 0." << endl;
+    } else {
+        double halfvalue=n/3; 
+        double CubeRoot;
+        
+
+        while (true) {
+            CubeRoot=(2.0/3.0)*halfvalue+ n/(3.0*halfvalue*halfvalue);
+            
+            if (abs(CubeRoot-halfvalue)<0.00001) {
+                break;
+            }
+
+            halfvalue=CubeRoot;
+        }
+
+        cout << "The approximate cube root of " << n << " is: " << approxCubeRoot << endl;
+    }
+
+    return 0;
+}
