@@ -1,0 +1,24 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+string palin(const string& str )
+{
+    int n=str.length();
+    for(int i=0;i<n/2;i++)
+    {
+        if(str[i]==str[i-n-1])
+        {
+            return "notpalindrom";
+        }
+    }
+    return "palindrom";
+}
+int main()
+{
+    string input;
+    cout<<"enter the string:";
+    cin>>input;
+   
+    cout<<palin(input);
+    return 0;
+}
