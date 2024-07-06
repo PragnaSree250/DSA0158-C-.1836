@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+double celtofeh(double num)
+{
+	return (num*9.0/5.0)+32;
+}
+int main()
+{
+	double value;
+	cout<<"enter the num:";
+	cin>>value;
+	cout<<celtofeh(value);
+	return 0;
+}
