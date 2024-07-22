@@ -1,0 +1,32 @@
+#include<iostream>
+#include<string>
+#include<cctype>
+using namespace std;
+class Binarytooctal{
+     string binary;
+	 int decimal;
+	 string octal;
+	 public:
+	   Binarytooctal(string bin):binary(bin),decimal(0)
+	   {
+		if(isvalidBinary())
+		{
+			converttodecimal();
+			converttooctal();
+		}
+		else{
+			cout<<"invalid"<<endl;
+		}
+	   }
+	   bool isvalidBinary(){
+		for(char ch:binary)
+		{
+			if(ch!='0' && ch!='1')
+			{
+				return false;
+			}
+		}
+		return true;
+	   }
+	   
+};
