@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+class skipper{
+	public:
+	int m;
+	int n;
+	int k;
+	public:
+	void setinfo(int m,int n,int k)
+	{
+		for(int i=m;i<n;i=i+k+1)
+		{
+			cout<<i<<" ";
+		}
+	}
+};
+int main()
+{
+	int n1,n2,n3;
+	cout<<"enter the values:"<<endl;
+	cout<<"starting values:";
+	cin>>n1;
+	cout<<"ending values:";
+	cin>>n2;
+	cout<<"skipper values:";
+	cin>>n3;
+	skipper s1;
+	s1.setinfo(n1,n2,n3);
+	return 0;
+}
