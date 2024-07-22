@@ -1,0 +1,41 @@
+#include<iostream>
+#include<string>
+using namespace std;
+const int num_author=4;
+struct author{
+	string name;
+	bool contribution;
+};
+int main()
+{
+	author a[num_author];
+	for(int i=0;i<num_author;i++)
+	{
+		cout<<"enter the name of author"<<i+1<<":";
+		cin>>a[i].name;
+		char response;
+		cout<<"did author"<<i+1<<"contributed(y/n):";
+		cin>>response;
+		a[i].contribution=(response=='y' || response=='Y');
+	}
+	string notcontribution;
+	for(int i=0;i<num_author;i++)
+	{
+		if(!a[i].contribution)
+		{
+			notcontribution=a[i].name;
+			break;
+		}
+	}
+	cout<<"not contributed:"<<notcontribution<<endl;
+	cout<<"new author:";
+	string new_author;
+	cin>>new_author;
+	for(int i=0;i<num_author;i++)
+	{
+		cout<<a[i].name<<endl;
+	}
+	cout<<"author 5:"<<new_author;
+	return 0;
+	
+}
