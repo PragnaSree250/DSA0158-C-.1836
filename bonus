@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+class company {
+    public:
+        string name;
+        double salary;
+        double bonus;
+
+        void getinfo() {
+            cout << "Enter the name: ";
+            cin >> name;
+            cout << "Enter the salary: ";
+            cin >> salary;
+        }
+};
+
+class extrasalary : public company {
+    public:
+        void setinfo() {
+            bonus = salary * 1.1;
+            cout << "Bonus to employee " << name << ": " << bonus << endl;
+        }
+};
+
+int main() {
+    extrasalary c1;  // Create an object of type extrasalary
+    c1.getinfo();
+    c1.setinfo();
+    return 0;
+}
