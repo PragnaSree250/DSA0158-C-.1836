@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int mat[10][10];
+	int res=0;
+	int n,i,j,r,c;
+	cout<<"no.of rows in matrix:";
+	cin>>r;
+	cout<<"no.of col in matrix:";
+	cin>>c;
+	for(i=0;i<r;i++)
+	{
+		for(j=0;j<c;j++)
+		{
+			cin>>mat[i][j];
+		}
+	}
+	
+	for(i=0;i<r;i++)
+	{
+		for(j=0;j<c;j++)
+		{
+			if(i==j){
+			res+=mat[i][j];
+			}
+			
+		}
+	}
+	cout<<res;
+return 0;
+}
