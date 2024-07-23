@@ -1,0 +1,72 @@
+#include <iostream>
+using namespace std;
+
+// Base class Shape
+class Shape {
+public:
+    // Pure virtual function for area calculation
+    virtual double area() const = 0;
+};
+
+// Base class Rectangle
+class Rectangle : public Shape {
+protected:
+    double length;
+    double width;
+
+public:
+    // Constructor
+    Rectangle(double l = 1.0, double w = 1.0) : length(l), width(w) {}
+
+    // Function to calculate area of rectangle
+    double area() const override {
+        return length * width;
+    }
+
+    // Function to display dimensions
+    void displayDimensions() const {
+        cout << "Length: " << length << ", Width: " << width << endl;
+    }
+};
+
+// Derived class Cuboid inheriting from Rectangle and Shape
+class Cuboid : public Rectangle {
+private:
+    double height;
+
+public:
+    // Constructor
+    Cuboid(double l = 1.0, double w = 1.0, double h = 1.0) : Rectangle(l, w), height(h) {}
+
+    // Function to calculate volume of cuboid
+    double volume() const {
+        return length * width * height;
+    }
+
+    // Override the area function to calculate the surface area of the cuboid
+    double area() const override {
+        return 2 * (length * width + width * height + height * length);
+    }
+
+    // Function to display dimensions
+    void displayDimensions() const {
+        Rectangle::displayDimensions();
+        cout << "Height: " << height << endl;
+    }
+};
+
+int main() {
+    // Create a Cuboid object
+    Cuboid cuboid(3.0, 4.0, 5.0);
+
+    // Display dimensions of the cuboid
+    cuboid.displayDimensions();
+
+    // Calculate and display surface area of the cuboid
+    cout << "Surface Area of Cuboid: " << cuboid.area() << endl;
+
+    // Calculate and display volume of the cuboid
+    cout << "Volume of Cuboid: " << cuboid.volume() << endl;
+
+    return 0;
+}
