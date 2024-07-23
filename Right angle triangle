@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+class RightAngleTriangle {
+private:
+    int rows;
+
+public:
+    // Default constructor
+    RightAngleTriangle() : rows(5) {}  // Default to 5 rows
+
+    // Parameterized constructor
+    RightAngleTriangle(int r) : rows(r) {}
+
+    // Function to print the right angle triangle pattern
+    void printPattern() const {
+        for (int i = 1; i <= rows; ++i) {
+            for (int j = 1; j <= i; ++j) {
+                cout << "* ";
+            }
+            cout << endl;
+        }
+    }
+};
+
+int main() {
+    RightAngleTriangle triangle1;  // Uses default constructor
+    RightAngleTriangle triangle2(7);  // Uses parameterized constructor
+
+    cout << "Right angle triangle with default rows:" << endl;
+    triangle1.printPattern();
+
+    cout << "\nRight angle triangle with 7 rows:" << endl;
+    triangle2.printPattern();
+
+    return 0;
+}
