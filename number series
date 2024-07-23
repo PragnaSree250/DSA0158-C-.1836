@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+
+class Series {
+private:
+    double sum;
+
+public:
+    // Constructor for arithmetic series
+    Series(int n, double a, double d) : sum(0) {
+        for (int i = 0; i < n; ++i) {
+            sum += (a + i * d);
+        }
+    }
+
+    // Constructor for geometric series
+    Series(int n, double a, double r, bool isGeometric) : sum(0) {
+        if (isGeometric) {
+            for (int i = 0; i < n; ++i) {
+                sum += (a * pow(r, i));
+            }
+        }
+    }
+
+    // Function to display the sum of the series
+    void displaySum() {
+        cout << "The sum of the series is: " << sum << endl;
+    }
+};
+
+int main() {
+    int choice;
+    cout << "Choose the type of series:\n";
+    cout << "1. Arithmetic Series\n";
+    cout << "2. Geometric Series\n";
+    cout << "Enter your choice (1 or 2): ";
+    cin >> choice;
+
+    if (choice == 1) {
+        int n;
+        double a, d;
+        cout << "Enter the number of terms (n): ";
+        cin >> n;
+        cout << "Enter the first term (a): ";
+        cin >> a;
+        cout << "Enter the common difference (d): ";
+        cin >> d;
+
+        Series arithmeticSeries(n, a, d);
+        arithmeticSeries.displaySum();
+    } else if (choice == 2) {
+        int n;
+        double a, r;
+        cout << "Enter the number of terms (n): ";
+        cin >> n;
+        cout << "Enter the first term (a): ";
+        cin >> a;
+        cout << "Enter the common ratio (r): ";
+        cin >> r;
+
+        Series geometricSeries(n, a, r, true);
+        geometricSeries.displaySum();
+    } else {
+        cout << "Invalid choice!" << endl;
+    }
+
+    return 0;
+}
