@@ -1,0 +1,22 @@
+#include <iostream>
+
+class Complex {
+public:
+    int real;
+    int imag;
+
+    Complex(int r, int i) : real(r), imag(i) {}
+    
+    void display() {
+        std::cout << "The real part is " << real << std::endl;
+        std::cout << "The imaginary part is " << imag << std::endl;
+    }
+};
+
+int main() {
+    Complex c1(1, 54);
+    Complex *ptr = &c1;
+    ptr->display();
+
+    return 0;
+}
