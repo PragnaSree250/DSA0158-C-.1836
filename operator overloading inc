@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class counter{
+	public:
+	int value;
+	public:
+	counter(int initialvalue=0):value(initialvalue){}
+	counter& operator++(){
+		++value;
+		return *this;
+	}
+	void display()
+	{
+		cout<<value<<endl;
+	}
+};
+int main()
+{
+	counter c1(10);
+	cout<<"initial value: ";
+	c1.display();
+	++c1;
+	cout<<"increament value: ";
+	
+	c1.display();
+	return 0;
+}
